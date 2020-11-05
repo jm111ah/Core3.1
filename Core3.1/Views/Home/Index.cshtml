@@ -1,8 +1,50 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Localizer["Blog"];
 }
+<h1>@ViewData[Titie]</h1>
+@if(!string.IsNullorEmpty(this.Model.Tag)||!string.IsNullorEmpty(this.Model.Search))
+{
+<div class="card mt-3 mb-3">
+    <div class="card-body">
+        @if(!string.IsNullorEmpty(this.Model.Tag))
+    {
+        <i class="fas-fa-tag"></i>
+        <text>@Localizer["Tag"]:@this.Model.Tag</text>       }
+        }
 
-<div class="text-center">
+        @if(!string.IsNullorEmpty(this.Model.Tag)&&!string.IsNullOrEmpty(this.Model.Search))
+        {
+        <br />
+        }
+        @if(!string.IsNullorEmpty(this.Model.Search))
+        {
+        <i class="fas-fa-search"></i>
+        <text>@Localizer["Search:"]@this.Model.Search</text>
+        }
+    </div>      
+</div>
+}
+<div class="row">
+    <div class="col-md-12 col-lg-9">
+
+        @if(this.Model.Enteries.TotalNumberOfItems>0)
+        {
+        foreach(var entry in this.Model.Entries)
+        {
+        <article class="mb-4">
+            <h2><a href="~/Blog/@entry,Url">@entry.Header</a></h2>
+            <partial name="_Header" model="@entry"/>
+
+        </article>
+        }
+        <pager paged-result="this.Model.Entries"></pager>
+        }
+        else
+        {
+        <p>@Localizer["No blog posts avaliable"]</p>
+        }
+    </div>
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
 </div>

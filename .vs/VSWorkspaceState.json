@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Core3.1",
+    "\\Core3.1\\obj",
+    "\\Core3.1\\obj\\Debug",
+    "\\Core3.1\\obj\\Release",
+    "\\Core3.1\\Properties",
+    "\\Core3.1\\Views",
+    "\\Core3.1\\Views\\Home",
+    "\\Core3.1\\Views\\Shared"
+  ],
+  "SelectedNode": "\\Core3.1\\Views\\Home\\header.cshtml",
+  "PreviewInSolutionExplorer": false
+}
